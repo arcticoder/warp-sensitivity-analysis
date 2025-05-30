@@ -1,0 +1,1 @@
+[ signal_source = "warp_drive_simulations", n_signals = 4, warp_velocities = "0.1,0.15,0.2", mass_parameters = "1e-6,5e-6,1e-5", sampling_rate = 16384, duration = 1.0, signal_types = "alcubierre_burst,van_den_broeck_pulse,natario_warp", noise_level = 0.03 ]
