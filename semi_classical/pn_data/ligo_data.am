@@ -1,0 +1,1 @@
+[ ExperimentType = "LIGO_O3", FrequencyRange = [10, 1000], StrainSensitivity = "1e-22", DataPoints = 7, NoiseFloor = "design_sensitivity" ]

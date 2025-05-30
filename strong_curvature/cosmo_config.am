@@ -1,0 +1,1 @@
+[ ModelType = "frw_minisuperspace", HubbleParameter = 0.7, OmegaMatter = 0.3, PlanckLength = 1e-35, ScaleFactorRange = "1e-10,1e10" ]

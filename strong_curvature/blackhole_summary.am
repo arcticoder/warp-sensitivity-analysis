@@ -1,0 +1,1 @@
+[ model_generation = 'strong_curvature_toy_models', model_type = '2d_schwarzschild', mass_parameter = 1.0, planck_length = 1e-35, n_models = 1, quantum_dominated = False ]

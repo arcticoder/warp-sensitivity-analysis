@@ -1,0 +1,1 @@
+[ computation = 'post_newtonian_expansion', max_pn_order = 3, warp_velocity = '0.1', mass_parameter = '1e-6', frequency_range = '[10, 1000]', n_corrections = 3 ]

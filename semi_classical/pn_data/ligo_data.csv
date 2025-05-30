@@ -1,0 +1,12 @@
+frequency_hz,strain_sensitivity,experiment_type
+10.0,1e-21,LIGO_O3
+20.0,8e-22,LIGO_O3
+50.0,3e-22,LIGO_O3
+100.0,1e-22,LIGO_O3
+200.0,8e-23,LIGO_O3
+500.0,5e-23,LIGO_O3
+1000.0,1e-22,LIGO_O3
+0.01,1e-18,atomic_interferometer
+0.1,5e-19,atomic_interferometer
+1.0,1e-19,atomic_interferometer
+10.0,3e-19,atomic_interferometer

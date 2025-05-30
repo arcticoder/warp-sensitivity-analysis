@@ -1,0 +1,1 @@
+[ MaxPNOrder = 3, FrequencyRange = "10,1000", ExpansionParameter = "v_over_c", SymbolicComputation = true ]

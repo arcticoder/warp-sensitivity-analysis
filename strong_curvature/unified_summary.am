@@ -1,0 +1,1 @@
+[ comparison_type = 'strong_curvature_models', n_models_total = 1, model_types = ["'2d_schwarzschild'"], regime_distribution = {'classical': 1}, n_quantum_gravity = 0, n_classical_valid = 1, average_quantum_correction = 1e-140, planck_scale_physics_important = False ]

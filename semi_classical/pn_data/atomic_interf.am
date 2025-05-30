@@ -1,0 +1,1 @@
+[ ExperimentType = "atomic_interferometer", FrequencyRange = [0.01, 10], PhaseSensitivity = "1e-6", DataPoints = 4, NoiseFloor = "shot_noise_limited" ]
