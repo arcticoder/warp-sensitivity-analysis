@@ -40,7 +40,7 @@ pip install numpy scipy python-ndjson tqdm
 ### 1\. Generate Noise Curve
 
 ```bash
-./generate_sensitivity_curve.py
+python generate_sensitivity_curve.py
 ```
 
 This produces:
