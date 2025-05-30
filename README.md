@@ -57,12 +57,12 @@ This produces:
 ### 2\. Analyze Signal Detectability
 
 ```bash
-python analyze_sensitivity.py \
-  --mock   mock_data.ndjson \
-  --meta   mock_data.am \
-  --noise  sensitivity_curve.csv \
-  --nmeta  sensitivity_curve.am \
-  --out    sensitivity_comparison.ndjson \
+python analyze_sensitivity.py `
+  --mock   mock_data.ndjson `
+  --meta   mock_data.am `
+  --noise  sensitivity_curve.csv `
+  --nmeta  sensitivity_curve.am `
+  --out    sensitivity_comparison.ndjson `
   --oam    sensitivity_comparison.am
 ```
 
