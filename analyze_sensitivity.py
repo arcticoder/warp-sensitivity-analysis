@@ -36,11 +36,31 @@ def load_noise_curve(csv_path):
 def parse_am_metadata(am_path, key):
     """
     Simple AsciiMath metadata parser: looks for key = "value" or key = value.
+    Handles quoted strings that may contain commas.
     """
     txt = open(am_path).read()
     # Remove brackets
     txt = txt.strip().lstrip('[').rstrip(']')
-    parts = [p.strip() for p in txt.split(',')]
+    
+    # Split more carefully to handle quoted strings
+    parts = []
+    current_part = ""
+    in_quotes = False
+    
+    for char in txt:
+        if char == '"':
+            in_quotes = not in_quotes
+            current_part += char
+        elif char == ',' and not in_quotes:
+            parts.append(current_part.strip())
+            current_part = ""
+        else:
+            current_part += char
+    
+    # Add the last part
+    if current_part.strip():
+        parts.append(current_part.strip())
+    
     for part in parts:
         if part.startswith(key):
             # split on '=' and strip quotes
