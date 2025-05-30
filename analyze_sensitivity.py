@@ -90,12 +90,11 @@ def main():
             'label':       label,
             'detectable':  detectable,
             'snr':         max_snr
-        })
-
-    # Write JSON-lines output
+        })    # Write JSON-lines output
     with open(args.out, 'w') as outf:
         w = ndjson.writer(outf)
-        w.write(results)
+        for result in results:
+            w.writerow(result)
 
     # Write AsciiMath summary
     summary = {
