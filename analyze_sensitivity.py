@@ -63,10 +63,13 @@ def main():
 
     # Load inputs
     signals = load_mock_signals(args.mock)
-    noise_freq, noise_psd = load_noise_curve(args.noise)
-
-    # Parse metadata
+    noise_freq, noise_psd = load_noise_curve(args.noise)    # Parse metadata
     detector = parse_am_metadata(args.nmeta, 'Model') or 'unknown_detector'
+    
+    # Parse mock data metadata
+    mock_sampling_rate = parse_am_metadata(args.meta, 'SamplingRate')
+    mock_noise_model = parse_am_metadata(args.meta, 'NoiseModel')
+    mock_injection_count = parse_am_metadata(args.meta, 'InjectionCount')
 
     results = []
     for sig in signals:
@@ -89,12 +92,12 @@ def main():
         results.append({
             'label':       label,
             'detectable':  detectable,
-            'snr':         max_snr
-        })    # Write JSON-lines output
+            'snr':         max_snr        })
+
+    # Write JSON-lines output
     with open(args.out, 'w') as outf:
-        w = ndjson.writer(outf)
         for result in results:
-            w.writerow(result)
+            outf.write(json.dumps(result) + '\n')
 
     # Write AsciiMath summary
     summary = {
@@ -102,6 +105,14 @@ def main():
         'n_signals':    len(results),
         'threshold':    args.threshold
     }
+    
+    # Add mock metadata to summary if available
+    if mock_sampling_rate:
+        summary['sampling_rate'] = mock_sampling_rate
+    if mock_noise_model:
+        summary['noise_model'] = mock_noise_model
+    if mock_injection_count:
+        summary['injection_count'] = mock_injection_count
     with open(args.oam, 'w') as amf:
         entries = ', '.join(f'{k} = {v!r}' for k, v in summary.items())
         amf.write(f'[ {entries} ]\n')

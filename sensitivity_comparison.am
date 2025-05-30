@@ -1,1 +1,1 @@
-[ detector = 'toy_powerlaw', n_signals = 2, threshold = 1.0 ]
+[ detector = 'toy_powerlaw', n_signals = 2, threshold = 1.0, sampling_rate = '16384', noise_model = 'AdvancedLIGO', injection_count = '2' ]
