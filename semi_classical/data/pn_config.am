@@ -1,1 +1,10 @@
-[ order = 2, parameters = ["mass", "spin"], units = "SI" ]
+[
+  order       = 3,
+  parameters  = ["mass", "spin"],
+  units       = "SI",
+  mass        = 30,
+  spin        = 0.5,
+  experiment  = "LIGO_O3",
+  output_json = "semi_classical/pn_vs_experiment.ndjson",
+  output_am   = "semi_classical/pn_vs_experiment.am"
+]

@@ -1,1 +1,10 @@
-[ MaxPNOrder = 3, FrequencyRange = "10,1000", ExpansionParameter = "v_over_c", SymbolicComputation = true ]
+[
+  MaxPNOrder         = 3,
+  FrequencyRange     = "10,1000",
+  ExpansionParameter = "v_over_c",
+  SymbolicComputation = true,
+  TheoryName         = "WarpBubble_v1",
+  MassParameter      = 30,
+  SpinParameter      = 0.5,
+  OutputLabels       = ["semi_classical/pn_predictions.ndjson", "semi_classical/pn_metadata.am"]
+]
