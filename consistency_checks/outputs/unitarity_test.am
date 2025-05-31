@@ -1,1 +1,1 @@
-[ test_type = 'unitarity_verification', total_tests = 3, passed_tests = 3, failed_tests = 0, pass_rate = 1.0, tolerance = 1e-12, overall_status = 'PASSED' ]
+[ test_type = 'unitarity_verification', total_tests = 1, passed_tests = 1, failed_tests = 0, pass_rate = 1.0, tolerance = 1e-12, overall_status = 'PASSED' ]

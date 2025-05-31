@@ -97,8 +97,7 @@ def analyze_pn_order(pn_correction, exp_frequencies, exp_sensitivity, exp_types)
             
         # Compute detection SNR
         snr = estimate_detection_snr(pn_correction, freq_subset, sens_subset)
-        
-        # Estimate constraints on theory parameters
+          # Estimate constraints on theory parameters
         if snr > 0:
             # Very rough constraint estimate
             constraint_strength = snr / 5.0  # SNR=5 gives order-of-magnitude constraint
@@ -108,10 +107,10 @@ def analyze_pn_order(pn_correction, exp_frequencies, exp_sensitivity, exp_types)
         
         results[exp_type] = {
             'snr': float(snr),
-            'detectable': snr > 5.0,  # 5-sigma detection threshold
+            'detectable': bool(snr > 5.0),  # 5-sigma detection threshold
             'parameter_bound': param_bound,
             'frequency_range': [float(np.min(freq_subset)), float(np.max(freq_subset))],
-            'n_data_points': len(freq_subset)
+            'n_data_points': int(len(freq_subset))
         }
     
     return results
@@ -138,8 +137,7 @@ def main():
     exp_type = parse_am_metadata(args.exp_meta, 'ExperimentType')
     
     print(f"Analyzing {len(pn_corrections)} PN corrections against {len(exp_frequencies)} experimental points...")
-    
-    # Analyze each PN order
+      # Analyze each PN order
     results = []
     for pn_correction in pn_corrections:
         analysis = analyze_pn_order(pn_correction, exp_frequencies, exp_sensitivity, exp_types)
@@ -151,8 +149,8 @@ def main():
                 'mass_parameter': pn_correction['mass_parameter']
             },
             'experimental_analysis': analysis,
-            'overall_detectability': any(exp['detectable'] for exp in analysis.values()),
-            'best_snr': max((exp.get('snr', 0) for exp in analysis.values()), default=0.0)
+            'overall_detectability': bool(any(exp['detectable'] for exp in analysis.values())),
+            'best_snr': float(max((exp.get('snr', 0) for exp in analysis.values()), default=0.0))
         }
         results.append(result)
     
