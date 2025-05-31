@@ -1,1 +1,1 @@
-[ analysis_type = 'pn_experimental_comparison', n_pn_orders = 3, n_detectable = 0, max_pn_order_analyzed = '3', warp_velocity = "'0.1'", snr_threshold = 5.0, best_constraint = None, experiment_types = ['LIGO'] ]
+[ computation = 'post_newtonian_expansion', max_pn_order = 3, warp_velocity = '0.1', mass_parameter = '1e-3', frequency_range = '[10.0, 1000.0]', n_corrections = 3 ]
