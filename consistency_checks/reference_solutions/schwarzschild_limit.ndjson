@@ -1,0 +1,36 @@
+{
+  "schwarzschild_2d": {
+    "ricci_scalar": 0.0,
+    "kretschmann_scalar": 48.0,
+    "event_horizon_radius": 2.0,
+    "mass_parameter": 1.0,
+    "description": "2D Schwarzschild solution with M=1 in natural units"
+  },
+  "warp_bubble_classical": {
+    "ricci_scalar": 0.0,
+    "energy_density": 1.0,
+    "warp_factor_max": 1.0,
+    "bubble_thickness": 1.0,
+    "description": "Classical warp bubble without quantum corrections"
+  },
+  "frw_classical": {
+    "ricci_scalar": 6.0,
+    "hubble_parameter": 1.0,
+    "energy_density": 0.375,
+    "scale_factor_power": 0.667,
+    "description": "FRW cosmology with matter domination (w=0)"
+  },
+  "linearized_gravity": {
+    "waveform_rms": 1e-21,
+    "strain_amplitude": 1e-21,
+    "frequency": 100.0,
+    "chirp_mass": 1.4,
+    "description": "Linearized gravitational wave from compact binary"
+  },
+  "tolerance_reference": {
+    "curvature_relative_error": 1e-8,
+    "waveform_relative_error": 1e-6,
+    "energy_relative_error": 1e-7,
+    "description": "Expected tolerances for classical limit recovery"
+  }
+}

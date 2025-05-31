@@ -1,0 +1,1 @@
+[ test_type = 'gauge_invariance_verification', total_data_points = 1, passed_data_points = 1, failed_data_points = 0, total_transformations = 5, failed_transformations = 0, pass_rate = 1.0, tolerance = 1e-10, gauge_parameter_amplitude = 1e-06, overall_status = 'PASSED' ]

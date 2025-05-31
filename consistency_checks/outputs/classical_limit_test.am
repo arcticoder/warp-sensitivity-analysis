@@ -1,0 +1,1 @@
+[ test_type = 'classical_limit_verification', total_tests = 3, passed_tests = 3, failed_tests = 0, pass_rate = 1.0, tolerance = 1e-08, scaling_factors = [1.0, 0.1, 0.01, 0.001, 1e-06], scaling_laws_consistent = 3, overall_status = 'PASSED' ]

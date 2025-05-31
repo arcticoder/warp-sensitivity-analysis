@@ -1,0 +1,59 @@
+[
+  # Gauge transformation test cases for consistency verification
+  TestCaseType = "gauge_transformations",
+  
+  # Coordinate transformations  
+  DiffeomorphismTests = [
+    {
+      name = "time_reparametrization",
+      transformation = "t -> t + epsilon * t^2", 
+      amplitude_range = [1e-8, 1e-4],
+      expected_invariants = ["ricci_scalar", "kretschmann_scalar"]
+    },
+    {
+      name = "spatial_coordinate_shift",
+      transformation = "x -> x + epsilon * sin(t)",
+      amplitude_range = [1e-6, 1e-3], 
+      expected_invariants = ["energy_density", "waveform_strain"]
+    },
+    {
+      name = "mixed_spacetime_gauge",
+      transformation = "t -> t + epsilon * x, x -> x + epsilon * t",
+      amplitude_range = [1e-7, 1e-4],
+      expected_invariants = ["curvature_invariants", "physical_observables"]
+    }
+  ],
+  
+  # Gauge parameter variations
+  GaugeParameterTests = [
+    {
+      name = "harmonic_gauge_variation", 
+      parameter = "gauge_alpha",
+      variation_range = [0.8, 1.2],
+      baseline_value = 1.0
+    },
+    {
+      name = "synchronous_gauge_perturbation",
+      parameter = "time_slicing", 
+      variation_range = [-0.1, 0.1],
+      baseline_value = 0.0
+    }
+  ],
+  
+  # Expected gauge invariant quantities
+  InvariantObservables = [
+    "ricci_scalar",
+    "kretschmann_scalar", 
+    "weyl_scalar",
+    "energy_density",
+    "waveform_strain_invariant_combination"
+  ],
+  
+  # Tolerance specifications
+  Tolerances = {
+    curvature_invariants = 1e-12,
+    energy_momentum = 1e-10, 
+    waveform_observables = 1e-8,
+    correlation_functions = 1e-9
+  }
+]

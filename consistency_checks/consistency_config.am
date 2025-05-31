@@ -1,0 +1,35 @@
+[
+  # Consistency check configuration
+  TestSuite = "warp_sensitivity_consistency",
+  
+  # Tolerances for numerical checks
+  UnitarityTolerance = 1e-12,
+  GaugeInvarianceTolerance = 1e-10,
+  ClassicalLimitTolerance = 1e-8,
+  
+  # Tests to run
+  EnableUnitarityCheck = true,
+  EnableGaugeInvarianceCheck = true,
+  EnableClassicalLimitCheck = true,
+  
+  # Input data sources
+  SemiClassicalDataPath = "../semi_classical/pn_waveforms.ndjson",
+  StrongCurvatureDataPath = "../strong_curvature/unified_strong_models.ndjson",
+  
+  # Reference solutions
+  SchwarzschildReferencePath = "reference_solutions/schwarzschild_limit.ndjson",
+  GaugeTestCasesPath = "reference_solutions/gauge_test_cases.am",
+  
+  # Gauge transformation parameters
+  GaugeParameterAmplitude = 1e-6,
+  NumberOfGaugeTransformations = 5,
+  
+  # Classical limit parameters
+  PlanckScalingFactors = [1.0, 0.1, 0.01, 0.001, 1e-6],
+  ClassicalObservables = ["ricci_scalar", "kretschmann_scalar", "waveform_amplitude"],
+  
+  # Output configuration
+  DetailedReportPath = "outputs/consistency_report.ndjson",
+  SummaryReportPath = "outputs/consistency_report.am",
+  FailureThreshold = 0.1  # Fraction of tests that can fail before overall failure
+]

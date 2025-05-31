@@ -1,0 +1,1 @@
+{"data_point_id": 0, "model_type": "semi_classical", "unitarity_checks": {"probability_conservation": {"status": "passed", "max_deviation": 3.6e-15, "tolerance": 1e-12}, "correlator_positivity": {"status": "passed", "min_eigenvalue": 0.0004, "tolerance": 1e-12}, "trace_preservation": {"status": "passed", "deviation": 4.2e-16, "tolerance": 1e-12}}, "overall_passed": true}
