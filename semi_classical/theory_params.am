@@ -1,1 +1,1 @@
-[ WarpVelocity = 0.1, MassParameter = 1e-6, TheoryType = "alcubierre_warp", MetricSignature = "mostly_plus" ]
+[ WarpVelocity = 0.1, MassParameter = 1e-3, TheoryType = "alcubierre_warp", MetricSignature = "mostly_plus" ]
